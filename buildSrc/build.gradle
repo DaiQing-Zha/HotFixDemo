@@ -1,0 +1,10 @@
+
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.javassist:javassist:3.22.0-CR1'
+}
