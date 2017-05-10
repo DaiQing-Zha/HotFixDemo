@@ -1,7 +1,11 @@
-package dodola.patch
+package dodola.patch;
 
 import javassist.ClassPool
 import javassist.CtClass
+import javassist.CtConstructor
+import javassist.CtMethod
+import javassist.CtNewConstructor
+import javassist.CtNewMethod
 
 public class PatchClass {
     /**
@@ -26,8 +30,6 @@ public class PatchClass {
         constructor.insertBefore("System.out.println(com.jxnu.hackdex.AntiLazyLoad.class);")
         c.writeFile(buildDir)
 
-
-
         CtClass c1 = classes.getCtClass("com.jxnu.hotfixdemo.LoadBugClass")
         if (c1.isFrozen()) {
             c1.defrost()
@@ -36,8 +38,6 @@ public class PatchClass {
         def constructor1 = c1.getConstructors()[0];
         constructor1.insertBefore("System.out.println(com.jxnu.hackdex.AntiLazyLoad.class);")
         c1.writeFile(buildDir)
-
-
     }
 
     static void growl(String title, String message) {

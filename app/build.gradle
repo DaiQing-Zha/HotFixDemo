@@ -1,3 +1,4 @@
+
 apply plugin: 'com.android.application'
 
 task('processWithJavassist') << {
@@ -23,13 +24,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    applicationVariants.all { variant ->
+//        variant.dex.dependsOn << processWithJavassist //在执行dx命令之前将代码打入到class中
+//    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.2.0'
-    compile project(':hackdex')
     compile project(':hotfixlib')
-    compile project(':buildSrc')
 }

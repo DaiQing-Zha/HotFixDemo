@@ -6,5 +6,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.javassist:javassist:3.22.0-CR1'
+    compile gradleApi()
+    compile localGroovy()
+    compile 'org.javassist:javassist:3.18.+'
 }

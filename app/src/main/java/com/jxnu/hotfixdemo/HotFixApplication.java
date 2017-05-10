@@ -23,8 +23,5 @@ public class HotFixApplication extends Application {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        dexPath = new File(getDir("dex", Context.MODE_PRIVATE), "patch_dex.jar");
-        Utils.prepareDex(this.getApplicationContext(), dexPath, "patch_dex.jar");
-        HotFix.patch(this, dexPath.getAbsolutePath(), "com.jxnu.hotfixdemo.BugClass");
     }
 }
