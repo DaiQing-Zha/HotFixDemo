@@ -1,12 +1,12 @@
 
 apply plugin: 'com.android.application'
 
-task('processWithJavassist') << {
-    String classPath = file('build/intermediates/classes/debug')//项目编译class所在目录
-    dodola.patch.PatchClass.process(classPath, project(':hackdex').buildDir
-            .absolutePath + '/intermediates/classes/debug')//第二个参数是hackdex的class所在目录
-
-}
+//task('processWithJavassist') << {
+//    String classPath = file('build/intermediates/classes/debug')//项目编译class所在目录
+//    dodola.patch.PatchClass.process(classPath, project(':hackdex').buildDir
+//            .absolutePath + '/intermediates/classes/debug')//第二个参数是hackdex的class所在目录
+//
+//}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"

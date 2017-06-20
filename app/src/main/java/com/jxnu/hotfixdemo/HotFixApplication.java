@@ -2,6 +2,7 @@ package com.jxnu.hotfixdemo;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 import com.jxnu.hotfixlib.HotFix;
 
@@ -16,6 +17,7 @@ public class HotFixApplication extends Application {
     public void onCreate() {
         super.onCreate();
         File dexPath = new File(getDir("dex", Context.MODE_PRIVATE), "hack_dex.jar");
+        Log.e("mainHHH","dexPath = " + dexPath.getAbsolutePath());
         Utils.prepareDex(this.getApplicationContext(), dexPath, "hack_dex.jar");
         HotFix.patch(this, dexPath.getAbsolutePath(), "com.jxnu.hackdex.AntiLazyLoad");
         try {

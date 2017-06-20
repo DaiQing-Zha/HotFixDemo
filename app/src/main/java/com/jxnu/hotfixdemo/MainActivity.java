@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         btn_patch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                File dexPath = new File(getDir("dex", Context.MODE_PRIVATE), "patch_dex.jar");
-                Utils.prepareDex(MainActivity.this, dexPath, "patch_dex.jar");
-                HotFix.patch(MainActivity.this, dexPath.getAbsolutePath(), "com.jxnu.hotfixdemo.BugClass");
+                File dexPath = new File(getDir("dex", Context.MODE_PRIVATE), "path_dex.jar");
+                Utils.prepareDex(MainActivity.this, dexPath, "path_dex.jar");
+                HotFix.patch(MainActivity.this, dexPath.getAbsolutePath(), "");
             }
         });
     }
